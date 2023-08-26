@@ -5,6 +5,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
 import java.lang.reflect.Modifier
 
@@ -14,13 +15,14 @@ fun SearchScreen(
     vm: SearchViewModel = viewModel()
 ) {
     Log.d("SearchScreen", "pokemonsInfo=${vm.pokemonsInfo}")
-    vm.pokemonsInfo?.let { pokemonsInfo ->
-        Log.d("SearchScreen", "pokemonsInfo=$pokemonsInfo")
+    val observePokemonsInfo = vm.pokemonsInfo.observeAsState()
+    val pokemonsInfo = observePokemonsInfo.value
+
+    pokemonsInfo?.let {
         LazyColumn(content = {
-            items(pokemonsInfo) { pokemonInfo ->
-                Log.d("SearchScreen", "pokemonInfo=$pokemonInfo")
-                Text(text = "${pokemonInfo.name}")
-            }
-        })
+        items(it) {pokemonInfo ->
+            Text(text = "${pokemonInfo.name}")
+        }
+    })
     }
 }

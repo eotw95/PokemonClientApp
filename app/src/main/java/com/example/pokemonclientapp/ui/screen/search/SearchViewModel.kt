@@ -1,6 +1,8 @@
 package com.example.pokemonclientapp.ui.screen.search
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pokemonclientapp.network.model.PokemonBasicInfoResponse
@@ -11,29 +13,20 @@ import kotlinx.coroutines.launch
 class SearchViewModel(
     val repo: PokeRepository = PokeRepository()
 ): ViewModel() {
-    var pokemonsInfo: List<PokemonBasicInfoResponse>? = null
+    private var _pokemonsInfo = MutableLiveData<List<PokemonBasicInfoResponse>>()
+    val pokemonsInfo: LiveData<List<PokemonBasicInfoResponse>> = _pokemonsInfo
 
     init {
         getPokemosInfo()
     }
 
-    fun getPokemonInfo(id: String): PokemonInfoResponse? {
-        var pokemonInfo: PokemonInfoResponse? = null
-        viewModelScope.launch {
-            pokemonInfo = repo.getPokemonInfo(id)
-        }
-        pokemonInfo?.let {
-            return pokemonInfo as PokemonInfoResponse
-        }
-        // Todo:エラーハンドリング
-        return null
-
+    fun getPokemonInfo(id: String) {
     }
 
     fun getPokemosInfo() {
         viewModelScope.launch {
             Log.d("SearchViewModel", "pokemonsInfo=${repo.getPokemonsInfo()?.results}")
-            pokemonsInfo = repo.getPokemonsInfo()?.results
+            _pokemonsInfo.value = repo.getPokemonsInfo()?.results
         }
     }
 }
