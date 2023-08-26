@@ -14,7 +14,6 @@ fun SearchScreen(
     modifier: Modifier = Modifier(),
     vm: SearchViewModel = viewModel()
 ) {
-    Log.d("SearchScreen", "pokemonsInfo=${vm.pokemonsInfo}")
     val observePokemonsInfo = vm.pokemonsInfo.observeAsState()
     val pokemonsInfo = observePokemonsInfo.value
 

@@ -31,7 +31,6 @@ class PokeRepository {
     }
 
     suspend fun getPokemonsInfo(): PokemonsInfoResponse? {
-        Log.d("PokeRepository", "getPokemonsInfo()=${pokeApi.getPokemonsInfo().body()}")
         return pokeApi.getPokemonsInfo().body()
     }
 }
