@@ -1,7 +1,9 @@
 package com.example.pokemonclientapp.repository
 
+import android.util.Log
 import com.example.pokemonclientapp.network.PokeApi
 import com.example.pokemonclientapp.network.model.PokemonInfoResponse
+import com.example.pokemonclientapp.network.model.PokemonsInfoResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -28,7 +30,8 @@ class PokeRepository {
         return pokeApi.getPokemonInfo(id).body()
     }
 
-    suspend fun getPokemonsInfo(): List<PokemonInfoResponse>? {
+    suspend fun getPokemonsInfo(): PokemonsInfoResponse? {
+        Log.d("PokeRepository", "getPokemonsInfo()=${pokeApi.getPokemonsInfo().body()}")
         return pokeApi.getPokemonsInfo().body()
     }
 }

@@ -1,6 +1,7 @@
 package com.example.pokemonclientapp.network
 
 import com.example.pokemonclientapp.network.model.PokemonInfoResponse
+import com.example.pokemonclientapp.network.model.PokemonsInfoResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -14,5 +15,5 @@ interface PokeApi {
     suspend fun getPokemonInfo(@Path("id") id: String): Response<PokemonInfoResponse>
 
     @GET("pokemon/?offset=20&limit=20")
-    suspend fun getPokemonsInfo(): Response<List<PokemonInfoResponse>>
+    suspend fun getPokemonsInfo(): Response<PokemonsInfoResponse>
 }
