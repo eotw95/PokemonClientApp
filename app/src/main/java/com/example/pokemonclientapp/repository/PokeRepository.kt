@@ -27,4 +27,8 @@ class PokeRepository {
     suspend fun getPokemonInfo(id: String): PokemonInfoResponse? {
         return pokeApi.getPokemonInfo(id).body()
     }
+
+    suspend fun getPokemonsInfo(): List<PokemonInfoResponse>? {
+        return pokeApi.getPokemonsInfo().body()
+    }
 }

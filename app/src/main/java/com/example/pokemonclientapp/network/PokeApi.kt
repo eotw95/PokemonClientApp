@@ -12,4 +12,7 @@ interface PokeApi {
 
     @GET("pokemon/{id}")
     suspend fun getPokemonInfo(@Path("id") id: String): Response<PokemonInfoResponse>
+
+    @GET("pokemon/?offset=20&limit=20")
+    suspend fun getPokemonsInfo(): Response<List<PokemonInfoResponse>>
 }
