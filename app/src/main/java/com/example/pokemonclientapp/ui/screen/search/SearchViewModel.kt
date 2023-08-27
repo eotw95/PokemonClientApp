@@ -8,9 +8,8 @@ import com.example.pokemonclientapp.network.model.PokemonBasicInfoResponse
 import com.example.pokemonclientapp.repository.PokeRepository
 import kotlinx.coroutines.launch
 
-class SearchViewModel(
-    val repo: PokeRepository = PokeRepository()
-): ViewModel() {
+class SearchViewModel: ViewModel() {
+    private val repo: PokeRepository = PokeRepository()
     private var _pokemonsInfo = MutableLiveData<List<PokemonBasicInfoResponse>>()
     val pokemonsInfo: LiveData<List<PokemonBasicInfoResponse>> = _pokemonsInfo
 
