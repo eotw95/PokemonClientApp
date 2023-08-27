@@ -11,7 +11,8 @@ import com.example.pokemonclientapp.ui.component.BasicInfoCell
 @Composable
 fun SearchScreen(
     modifier: Modifier = Modifier,
-    vm: SearchViewModel = viewModel()
+    vm: SearchViewModel = viewModel(),
+    onClick: () -> Unit
 ) {
     val observePokemonsInfo = vm.pokemonsInfo.observeAsState()
     val pokemonsInfo = observePokemonsInfo.value
@@ -20,7 +21,10 @@ fun SearchScreen(
         LazyColumn(
             content = {
             items(it) {pokemonInfo ->
-                BasicInfoCell(word = pokemonInfo.name)
+                BasicInfoCell(
+                    word = pokemonInfo.name,
+                    onClickCell = onClick
+                )
             }
         })
     }

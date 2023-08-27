@@ -1,6 +1,7 @@
 package com.example.pokemonclientapp.ui.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,13 +16,15 @@ import com.example.pokemonclientapp.ui.theme.Purple80
 @Composable
 fun BasicInfoCell(
     modifier: Modifier = Modifier,
-    word: String
+    word: String,
+    onClickCell: () -> Unit
 ) {
     Column(
         modifier = modifier
             .padding(horizontal = 16.dp, vertical = 10.dp)
             .fillMaxWidth()
             .background(Purple80)
+            .clickable(onClick = onClickCell)
     ) {
         Text(
             modifier = modifier
