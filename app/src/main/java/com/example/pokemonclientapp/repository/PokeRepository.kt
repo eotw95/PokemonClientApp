@@ -26,8 +26,8 @@ class PokeRepository {
             .create(PokeApi::class.java)
     }
 
-    suspend fun getPokemonInfo(id: String): PokemonInfoResponse? {
-        return pokeApi.getPokemonInfo(id).body()
+    suspend fun getPokemonInfo(name: String): PokemonInfoResponse? {
+        return pokeApi.getPokemonInfo(name).body()
     }
 
     suspend fun getPokemonsInfo(): PokemonsInfoResponse? {

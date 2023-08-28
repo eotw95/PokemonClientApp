@@ -11,8 +11,8 @@ interface PokeApi {
         const val BASE_URL = "https://pokeapi.co/api/v2/"
     }
 
-    @GET("pokemon/{id}")
-    suspend fun getPokemonInfo(@Path("id") id: String): Response<PokemonInfoResponse>
+    @GET("pokemon/{name}")
+    suspend fun getPokemonInfo(@Path("name") name: String): Response<PokemonInfoResponse>
 
     @GET("pokemon/?offset=20&limit=20")
     suspend fun getPokemonsInfo(): Response<PokemonsInfoResponse>
