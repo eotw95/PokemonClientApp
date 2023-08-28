@@ -22,7 +22,7 @@ fun SearchScreen(
             content = {
             items(it) {pokemonInfo ->
                 BasicInfoCell(
-                    word = pokemonInfo.name,
+                    info = pokemonInfo,
                     onClickCell = onClick
                 )
             }

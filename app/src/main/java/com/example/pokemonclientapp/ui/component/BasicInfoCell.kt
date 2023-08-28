@@ -11,12 +11,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pokemonclientapp.network.model.PokemonBasicInfoResponse
 import com.example.pokemonclientapp.ui.theme.Purple80
 
 @Composable
 fun BasicInfoCell(
     modifier: Modifier = Modifier,
-    word: String,
+    info: PokemonBasicInfoResponse,
     onClickCell: () -> Unit
 ) {
     Column(
@@ -36,6 +37,6 @@ fun BasicInfoCell(
             modifier = modifier
                 .padding(horizontal = 16.dp, vertical = 10.dp),
             fontSize = 40.sp,
-            text = "$word")
+            text = "${info.name}")
     }
 }
