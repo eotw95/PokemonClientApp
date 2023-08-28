@@ -14,17 +14,17 @@ fun MainNavHost(navController: NavHostController) {
         startDestination = "search",
         builder = {
             composable(
-                route= "search",
+                route= Search.route,
                 content = {
                     SearchScreen(
                         onClick = {
-                            navController.navigate("detail")
+                            navController.navigate(Detail.route)
                         }
                     )
                 }
             )
             composable(
-                route = "detail",
+                route = Detail.route,
                 content = {
                     DetailScreen()
                 }
