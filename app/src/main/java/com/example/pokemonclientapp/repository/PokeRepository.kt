@@ -1,6 +1,5 @@
 package com.example.pokemonclientapp.repository
 
-import android.util.Log
 import com.example.pokemonclientapp.network.PokeApi
 import com.example.pokemonclientapp.network.model.PokemonInfoResponse
 import com.example.pokemonclientapp.network.model.PokemonsInfoResponse
