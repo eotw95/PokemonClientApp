@@ -26,7 +26,7 @@ fun MainNavHost(navController: NavHostController) {
             composable(
                 route = Detail.route,
                 content = {
-                    DetailScreen()
+//                    DetailScreen()
                 }
             )
         }
