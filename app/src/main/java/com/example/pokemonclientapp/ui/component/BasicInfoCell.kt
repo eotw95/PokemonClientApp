@@ -18,14 +18,16 @@ import com.example.pokemonclientapp.ui.theme.Purple80
 fun BasicInfoCell(
     modifier: Modifier = Modifier,
     info: PokemonEntriesResponse,
-    onClickCell: () -> Unit
+    onClickCell: (Int) -> Unit
 ) {
     Column(
         modifier = modifier
             .padding(horizontal = 16.dp, vertical = 10.dp)
             .fillMaxWidth()
             .background(Purple80)
-            .clickable(onClick = onClickCell)
+            .clickable(onClick = {
+                onClickCell(info.entryNumber)
+            })
     ) {
         Text(
             modifier = modifier

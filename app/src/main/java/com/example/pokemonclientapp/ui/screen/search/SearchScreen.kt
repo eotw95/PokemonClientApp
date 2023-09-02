@@ -12,7 +12,7 @@ import com.example.pokemonclientapp.ui.component.BasicInfoCell
 fun SearchScreen(
     modifier: Modifier = Modifier,
     vm: SearchViewModel = viewModel(),
-    onClick: () -> Unit
+    onClick: (Int) -> Unit
 ) {
     val observePokemonsInfo = vm.pokemonsInfo.observeAsState()
     val pokemonsInfo = observePokemonsInfo.value
