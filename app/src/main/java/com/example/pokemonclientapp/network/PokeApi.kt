@@ -14,6 +14,6 @@ interface PokeApi {
     @GET("pokemon/{name}")
     suspend fun getPokemonInfo(@Path("name") name: String): Response<PokemonInfoResponse>
 
-    @GET("pokemon/?offset=20&limit=20")
+    @GET("pokedex/national/")
     suspend fun getPokemonsInfo(): Response<PokemonsInfoResponse>
 }

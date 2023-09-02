@@ -1,8 +1,7 @@
 package com.example.pokemonclientapp.network.model
 
+import com.squareup.moshi.Json
+
 data class PokemonsInfoResponse(
-    val count: Int,
-    val next: String,
-    val previous: String,
-    val results: List<PokemonBasicInfoResponse>
+    @Json(name = "pokemon_entries")val pokemonEntries: List<PokemonEntriesResponse>
 )
