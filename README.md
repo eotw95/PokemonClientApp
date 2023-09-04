@@ -8,10 +8,5 @@ PokeAPI https://pokeapi.co/
 * Jetpack Compose
 * Compose Navigation
 * Coil
-* Dagger Hilt
 * LiveData
-* Flow
-* (Fragment) Navigation
-* Jetpack Paging
-* Room
 * Retrofit
