@@ -28,14 +28,10 @@ fun BasicInfoCell(
             })
     ) {
         Text(
-            modifier = modifier
-                .padding(horizontal = 16.dp),
             fontSize = 15.sp,
             text = "No. ${info.entryNumber}")
         Spacer(modifier = Modifier.padding(vertical = 2.dp))
         Text(
-            modifier = modifier
-                .padding(horizontal = 16.dp),
             fontSize = 20.sp,
             text = info.pokemonSpecies.name
         )
