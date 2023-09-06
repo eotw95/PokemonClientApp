@@ -9,6 +9,7 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pokemonclientapp.network.model.PokemonEntriesResponse
@@ -28,10 +29,12 @@ fun BasicInfoCell(
             })
     ) {
         Text(
+            fontStyle = FontStyle.Italic,
             fontSize = 15.sp,
             text = "No. ${info.entryNumber}")
         Spacer(modifier = Modifier.padding(vertical = 2.dp))
         Text(
+            fontStyle = FontStyle.Italic,
             fontSize = 20.sp,
             text = info.pokemonSpecies.name
         )
